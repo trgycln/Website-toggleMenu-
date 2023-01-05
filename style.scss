@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
+$bg-color: #F7F7F7;
+$color1: #745b37;
+$color-dark: #5b2a02;
+$font-handwriting: 'Great Vibes', cursive;
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: $bg-color;
+}
+
+// SOCİAL BAR
+
+.social{
+    display: flex;
+    height: 100px;
+    // flex-wrap: wrap;
+    align-items: center;
+
+    .logo{
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        font-family: $font-handwriting;
+        border: 2px solid $color-dark;
+        border-radius: 50%;
+        margin-right: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .socialText{
+        flex-basis: 25%;
+        text-align: start;
+        font-size: 12px;
+    }
+
+    .company-name{
+        flex-basis: 50%;
+        font-family: $font-handwriting;
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center;
+        z-index: 20;
+        text-shadow: 0 0 5px;
+        color: $color1;
+        padding-top: 40px;
+    }
+
+    .icons{
+        flex-basis: 25%;
+        min-width: 100px;
+        text-align: end;
+        cursor: pointer;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 760px) {
+    .social{
+        flex-direction: column;
+
+        .logo{
+            margin-top: 5px;
+        }
+    }
+    .icons{
+        order: -1;
+        padding-top: 40px;
+    }
+}
+
+// NAVBAR 
+
+nav{
+    ul{
+        display: flex;
+        justify-content: space-evenly;
+        // border: 2px solid blue;
+        li{
+            list-style: none;
+
+            a{
+                text-decoration: none;
+                color: $color-dark;
+                font-weight: 600;
+                &:hover{
+                    color: $color1;
+                }
+            }
+        }
+    }
+    
+    .toggleIcon{
+        color: $color-dark;
+        font-size: 30px;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        display: none;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 760px) {
+    nav ul{
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: center;
+        background-color: $color1;
+        margin-top: 120px;
+        padding: 0;
+        display: none;
+        
+        li{
+            border: 1px solid $color-dark;
+            box-shadow: 0 0 3px;
+            padding: 10px 0;
+            transition: .5s;
+            &:hover{
+                background-color: $bg-color;
+            }
+            a{
+                color: $bg-color;
+                transition: .5s;
+                &:hover{
+                    color: $color-dark;
+                }
+            }
+        }
+        
+    }
+
+   nav .toggleIcon{
+    display: block;
+   }
+}
+
+// BACKGROUND İMAGE
+.imgContainer{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+    .imgBg{
+        position: absolute;
+        z-index: -1;
+        left: -50px;
+        top: -50px;
+        overflow: hidden;
+    }
+
+    .imgBg2{
+        position: absolute;
+        width: 500px;
+        z-index: -1;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+       
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }  
+}
+
+.introduceContainer{
+    position: absolute;
+    top: 60%;
+    width: 40%;
+    margin-left: 40px;
+    color: $color-dark;
+
+    button{
+        width: 200px;
+        height: 50px;
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: none;
+        background-color: $color1;
+        color: $bg-color;
+        font-family: $font-handwriting;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 500px){
+    .introduceContainer{
+        display: block;
+        margin-top: 350px;
+        left: 100px;
+        // border: 1px solid red;
+        text-align: center;
+              
+
+        h2{
+            color: $color1;
+        }
+        color:$color-dark;
+        font-weight: bold;
+    }
+}
+
+
+footer{
+    background-color: black;
+    height: 80px;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+
+    p{
+        font-size: .75em;
+        padding-top: 20px;
+       
+
+        span{
+            font-family: $font-handwriting;
+            font-size: 1rem;
+            font-weight: bold;
+            color:$color1;
+        }
+    }
+    
+    .footerIcons{
+        color: #fff;
+        i{
+        &:first-child{
+            color: rgb(0, 153, 255);}
+        &:nth-child(2){
+            color: rgba(49, 49, 248, 0.856);
+        }   
+        &:nth-child(3){
+            color: orangered;
+        }  
+        &:nth-child(4){
+            color: #fff;
+        } 
+        &:last-child{
+            color: green;
+        } 
+        }
+        
+    }
+}
+
+// ABOUT
+
+.aboutDiv{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px ;
+    margin-bottom: 50px;
+
+    .aboutImg{
+        flex-basis: 40%;
+        border-radius: 10px;
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    }
+    .aboutText{
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $color-dark;
+
+        p{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    }
+}
+
+@media (max-width: 760px) {
+    .aboutDiv{
+        flex-direction: column;
+    }
+}
+
+
+// DİSCOVER
+
+.discover{
+    .discoverTitle{
+        text-align: center;
+        color: $color-dark;
+    }
+    
+    .discoverProducts{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+    .product{
+        margin: 10px;
+        box-shadow: 0 0 10px;
+        text-align: center;
+        color: $color-dark;
+        font-weight: bold;
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }   
+}}
+
+@media (max-width: 760px) {
+    .discover .discoverProducts{
+        grid-template-columns: 1fr;
+    }
+}
